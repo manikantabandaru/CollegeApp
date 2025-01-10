@@ -33,7 +33,7 @@ Ex: 2
     docker run -p 8081:8081 -d workshop
     docker ps  (Take container ID from output)
     docker logs  -f  <container ID>    (to Check logs)
-    docker  exec -it <container ID>  /bin/bash  (locate your jar file)
+    docker  exec -it <container ID>  /bin/sh  (locate your jar file)
 
 Ex: 3
     docker build -t  workshop .
