@@ -55,3 +55,54 @@ FOR upload the endpoint is
 curl --location 'http://localhost:8082/upload' --form 'file=@"/C:/Users/NMR020/Downloads/Dockerfile.txt"'
 
 ![image](https://github.com/user-attachments/assets/b6f9f234-3874-4046-bd40-3918e1f822a0)
+
+
+
+K8S Excerices:
+
+minikube start
+
+kubectl get po -A
+
+minikube dashboard
+
+
+Open New terminal
+
+Ex: 5  Create Hello minikube service in Kubernetes 
+Sol:
+  kubectl create deployment hello-minikube --image=kicbase/echo-server:1.0
+kubectl expose deployment hello-minikube --type=NodePort --port=8080
+kubectl port-forward service/hello-minikube 7080:8080
+
+Your application is now available at http://localhost:7080/
+
+Ex 6:  Create  Hello minikube  with  Load balancer
+Sol:
+kubectl create deployment balanced --image=kicbase/echo-server:1.0
+kubectl expose deployment balanced --type=LoadBalancer --port=8080
+
+minikube tunnel
+
+To find the routable IP, run this command and examine the EXTERNAL-IP column:
+kubectl get services balanced
+
+Your deployment is now available at <EXTERNAL-IP>:8080  (without port forwarding)
+
+
+Ex:7  Create  Hello minikube with Ingress controller
+Sol: 
+minikube addons enable ingress
+
+kubectl apply -f https://storage.googleapis.com/minikube-site-examples/ingress-example.yaml
+
+TO get ingress details
+kubectl get ingress
+NAME              CLASS   HOSTS   ADDRESS          PORTS   AGE
+example-ingress   nginx   *       <your_ip_here>   80      5m45s
+
+To get output:
+
+curl <ip_from_above>/foo
+
+
