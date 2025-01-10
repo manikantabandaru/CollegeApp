@@ -16,6 +16,8 @@ Pre requiste steps:
 
 -> Download Dockerfile and jar from this repo  to the same folder
 -> Run below commands in terminal with same path as previous downloaded files
+
+
 Ex: 1
 sol:
  docker build -t  workshop .
@@ -42,14 +44,14 @@ you should see Welcome message
 
 Ex: 4
     docker build -t  workshop .
-
+    docker run -p 8082:8082 --env JAVA_OPTS=-Dspring.port=8082  --env -DUPLOAD_DIR=/tmp/fileupload -v /home/fileupload:/tmp/fileupload  -d workshop    
 
 Use   demo-1.0.0-SNAPSHOT.jar    for upload files 
 
 FOR upload the endpoint is   
 
 
-curl --location 'http://localhost:8081/upload' \
+curl --location 'http://localhost:8082/upload' \
 --form 'file=@"/C:/Users/NMR020/Downloads/Dockerfile.txt"'
 
 ![image](https://github.com/user-attachments/assets/b6f9f234-3874-4046-bd40-3918e1f822a0)
