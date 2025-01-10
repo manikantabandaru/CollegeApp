@@ -45,7 +45,7 @@ you should see Welcome message
 
 Ex: 4
     docker build -t  workshop .
-
+    docker run -p 8082:8082 --env SERVER_PORT=8082  --env UPLOAD_DIR=/tmp/fileupload -v /home/fileupload:/tmp/fileupload  -d workshop    
 
 Use   demo-1.0.0-SNAPSHOT.jar    for upload files 
 
