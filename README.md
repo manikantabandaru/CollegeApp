@@ -104,7 +104,7 @@ minikube dashboard
 
 Open New terminal
 
-Ex: 5  Create Hello minikube service in Kubernetes 
+Ex: 9  Create Hello minikube service in Kubernetes 
 Sol:
   kubectl create deployment hello-minikube --image=kicbase/echo-server:1.0
 kubectl expose deployment hello-minikube --type=NodePort --port=8080
@@ -112,7 +112,7 @@ kubectl port-forward service/hello-minikube 7080:8080
 
 Your application is now available at http://localhost:7080/
 
-Ex 6:  Create  Hello minikube  with  Load balancer
+Ex 10:  Create  Hello minikube  with  Load balancer
 Sol:
 kubectl create deployment balanced --image=kicbase/echo-server:1.0
 kubectl expose deployment balanced --type=LoadBalancer --port=8080
@@ -125,7 +125,7 @@ kubectl get services balanced
 Your deployment is now available at <EXTERNAL-IP>:8080  (without port forwarding)
 
 
-Ex:7  Create  Hello minikube with Ingress controller
+Ex 11:  Create  Hello minikube with Ingress controller
 Sol: 
 minikube addons enable ingress
 
