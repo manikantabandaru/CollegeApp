@@ -64,7 +64,7 @@ Check output in your host system using  **ls /home/fileupload   **
 
 
 
-Ex 6: Try commands like docker ports, docker top , docker stop , docker restart
+Ex 5: Try commands like docker ports, docker top 
 
 TO list docker ports:
 
@@ -73,6 +73,9 @@ docker port <container_ID>
 To  Display the running processes of a container:
 
 docker top <container_ID>
+
+
+Ex 6:  Try commands like  docker stop , docker restart
 
 To restart the container
 
@@ -95,12 +98,14 @@ K8S Excerices:
 
 Reference: https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Fx86-64%2Fstable%2Fbinary+download#Ingress
 
-minikube start
+minikube start --driver=docker  (for linux systems)
+minikube start (for windows)
 
 kubectl get po -A
 
 minikube dashboard
 
+See the output in the broswer directly abouts pods, deployments, replicas etc
 
 Open New terminal
 
