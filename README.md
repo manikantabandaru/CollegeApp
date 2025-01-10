@@ -63,6 +63,34 @@ Check output in your host system using  **ls /home/fileupload   **
 
 
 
+
+Ex 6: Try commands like docker ports, docker top , docker stop , docker restart
+
+TO list docker ports:
+
+docker port <container_ID>
+
+To  Display the running processes of a container:
+
+docker top <container_ID>
+
+To restart the container
+
+docker restart <CONTAINER_ID>
+
+To stop the containers
+
+docker stop <CONTAINER_ID>
+
+
+Ex: 8  To get stats
+
+Display a live stream of container(s) resource usage statistics
+
+docker stats
+
+
+
 K8S Excerices:  
 
 Reference: https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Fx86-64%2Fstable%2Fbinary+download#Ingress
