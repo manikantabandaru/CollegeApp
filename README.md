@@ -16,7 +16,10 @@ Pre requiste steps:
 3. Install minikube
 
 -> Download Dockerfile and jar from this repo  to the same folder
+
 -> Run below commands in terminal with same path as previous downloaded files
+
+-> Use   demo-1.0.0-SNAPSHOT.jar    for upload files 
 
 Ex: 1
 sol:
@@ -47,12 +50,14 @@ Ex: 4
     docker build -t  workshop .
     docker run -p 8082:8082 --env SERVER_PORT=8082  --env UPLOAD_DIR=/tmp/fileupload -v /home/fileupload:/tmp/  -d workshop    
 
-Use   demo-1.0.0-SNAPSHOT.jar    for upload files 
+
 
 FOR upload the endpoint is   
 
 
 curl --location 'http://localhost:8082/upload' --form 'file=@"/C:/Users/NMR020/Downloads/Dockerfile.txt"'
+
+Check output in your host system using  **ls /home/fileupload   **
 
 ![image](https://github.com/user-attachments/assets/b6f9f234-3874-4046-bd40-3918e1f822a0)
 
