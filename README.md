@@ -2,12 +2,13 @@
 
 
 1. Write Dockerfile and run docker image to execute java program  
-    a.  In interactive console mode 
+    a.  In interactive console mode
+   
     b.  in Deamon mode
-2. Log into docker container to see logs for debug purpose and locate jars path, locate logs path 
+3. Log into docker container to see logs for debug purpose and locate jars path, locate logs path 
 
-3. Write and run docker file to run java program with environment variables like Port number (8081), or any logs location (c://container/logs ) etc 
-4. Write and run docker file to run java program   and the java program should  write logs to the host system which is  outside the container using mount  (Ex: write logs to host system with path c://container/logs)
+4. Write and run docker file to run java program with environment variables like Port number (8081), or any logs location (c://container/logs ) etc 
+5. Write and run docker file to run java program   and the java program should  write logs to the host system which is  outside the container using mount  (Ex: write logs to host system with path c://container/logs)
 
 Pre requiste steps:
 1. Install Docker
@@ -17,11 +18,11 @@ Pre requiste steps:
 -> Download Dockerfile and jar from this repo  to the same folder
 -> Run below commands in terminal with same path as previous downloaded files
 
-
 Ex: 1
 sol:
  docker build -t  workshop .
  docker run -p 8081:8081 workshop   (Interactive mode)
+ 
 Open in broswer and Enter : http://localhost:8081/workshop
 you should see Welcome message
 
@@ -44,14 +45,14 @@ you should see Welcome message
 
 Ex: 4
     docker build -t  workshop .
-    docker run -p 8082:8082 --env JAVA_OPTS=-Dspring.port=8082  --env -DUPLOAD_DIR=/tmp/fileupload -v /home/fileupload:/tmp/fileupload  -d workshop    
+
 
 Use   demo-1.0.0-SNAPSHOT.jar    for upload files 
 
 FOR upload the endpoint is   
 
 
-curl --location 'http://localhost:8082/upload' \
+curl --location 'http://localhost:8081/upload' \
 --form 'file=@"/C:/Users/NMR020/Downloads/Dockerfile.txt"'
 
 ![image](https://github.com/user-attachments/assets/b6f9f234-3874-4046-bd40-3918e1f822a0)
