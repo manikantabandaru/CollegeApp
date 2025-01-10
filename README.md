@@ -37,7 +37,7 @@ Ex: 2
 
 Ex: 3
     docker build -t  workshop .
-    docker run -p 8082:8082 --env -Dserver.port=8082 -d workshop    
+    docker run -p 8082:8082 --env SERVER_PORT=8082 -d workshop    
     Open in broswer and Enter : http://localhost:8082/workshop
 you should see Welcome message
 
